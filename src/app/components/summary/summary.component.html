@@ -1,0 +1,23 @@
+<p>
+  summary works!
+  <span class="button-bar">
+    <a [routerLink]="'/fr'" [routerLinkActive]="['router-link-active']">FR</a>
+    <a [routerLink]="'/en'" [routerLinkActive]="['router-link-active']">EN</a>
+    <button type="button" (click)="changeLanguage('fr')">translate to FR</button>
+    <button type="button" (click)="changeLanguage('en')">translate to EN</button>
+  </span>
+</p>
+<p>
+  <a [routerLink]="'/summary' | localize" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+    {{'summary' | translate}}
+  </a>
+  <a [routerLink]="'/cars' | localize" [routerLinkActive]="['router-link-active']">
+    {{'cars' | translate}}
+  </a>
+  <a [routerLink]="'/home' | localize" [routerLinkActive]="['router-link-active']">
+    {{'home' | translate}}
+  </a>
+  <a [routerLink]="'/error' | localize" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+    {{'error' | translate}}
+  </a>
+</p>

@@ -1,23 +1,24 @@
+<h1>Summary</h1>
 <p>
-  summary works!
   <span class="button-bar">
-    <a [routerLink]="'/fr'" [routerLinkActive]="['router-link-active']">FR</a>
-    <a [routerLink]="'/en'" [routerLinkActive]="['router-link-active']">EN</a>
     <button type="button" (click)="changeLanguage('fr')">translate to FR</button>
     <button type="button" (click)="changeLanguage('en')">translate to EN</button>
+    <br>
+    <button type="button" (click)="changeProvince('on')">translate to ON</button>
+    <button type="button" (click)="changeProvince('qc')">translate to QC</button>
   </span>
 </p>
 <p>
-  <a [routerLink]="'/summary' | localize" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+  <a [routerLink]="'/summary' | localize">
     {{'summary' | translate}}
   </a>
-  <a [routerLink]="'/cars' | localize" [routerLinkActive]="['router-link-active']">
+  <a [routerLink]="'/cars' | localize">
     {{'cars' | translate}}
   </a>
-  <a [routerLink]="'/home' | localize" [routerLinkActive]="['router-link-active']">
+  <a [routerLink]="'/home' | localize">
     {{'home' | translate}}
   </a>
-  <a [routerLink]="'/error' | localize" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+  <a [routerLink]="'/error' | localize">
     {{'error' | translate}}
   </a>
 </p>

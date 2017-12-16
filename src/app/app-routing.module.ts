@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: "summary", component: SummaryComponent },
   { path: "home", component: HomeComponent },
   { path: "cars", component: CarsComponent },
+  { path: "lazy", loadChildren: "./modules/lazy-loaded/lazy-loaded.module#LazyLoadedModule"},
   { path: "error", component: ErrorComponent },
   { path: "**", redirectTo: "/error", pathMatch: "full" },
 ];

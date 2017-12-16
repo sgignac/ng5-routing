@@ -1,4 +1,6 @@
 <p>
   cars works!
-  <a routerLink="/summary">summary</a>
+  <a [routerLink]="'/summary' | localize" [routerLinkActive]="['router-link-active']" [routerLinkActiveOptions]="{exact:true}">
+    {{'summary' | translate}}
+  </a>
 </p>

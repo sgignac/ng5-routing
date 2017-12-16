@@ -1,3 +1,4 @@
+import { ApplicationContextService } from './../../services/application-context.service';
 import { Component, OnInit } from '@angular/core';
 import { LocalizeRouterService } from 'localize-router';
 
@@ -8,10 +9,16 @@ import { LocalizeRouterService } from 'localize-router';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor(private localize: LocalizeRouterService) { }
+  constructor(private localize: LocalizeRouterService, private _ctx:ApplicationContextService) { }
 
   changeLanguage(lang: string) {
-    this.localize.changeLanguage(lang);
+    let prov = "-" + this._ctx.appContext.province.toLowerCase();
+    this.localize.changeLanguage(lang + prov);
+  }
+  changeProvince(prov: string) {
+    this._ctx.appContext.province = prov;
+    let lang = this._ctx.appContext.language.toLowerCase() + "-" ;
+    this.localize.changeLanguage(lang + prov);
   }
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+import { ApplicationContextService } from './services/application-context.service';
 import { Routes, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { SummaryComponent } from './components/summary/summary.component';
@@ -15,14 +16,15 @@ import { LocalizeRouterService } from 'localize-router';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private _router: Router, translate: TranslateService, private localize: LocalizeRouterService){
+  constructor(private _ctx:ApplicationContextService, private localize: LocalizeRouterService){
     // this language will be used as a fallback when a translation isn't found in the current language
     //translate.setDefaultLang('en');
      
     // the lang to use, if the lang isn't available, it will use the current loader to get them
     //translate.use('en');
 
-    localize.changeLanguage('fr');
+    console.log('context', this._ctx.appContext);
+    localize.changeLanguage(this._ctx.appContext.locales);
   }
 
   ngOnInit(){
